@@ -6,8 +6,11 @@
 <script src="g3.js"></script>
 <script src="g4.js"></script>
 <script>
+var b64 = window.__g1+window.__g2+window.__g3+window.__g4;
+var bytes = Uint8Array.from(atob(b64), function(c){return c.charCodeAt(0);});
+var html = new TextDecoder("utf-8").decode(bytes);
 document.open();
-document.write(atob(window.__g1+window.__g2+window.__g3+window.__g4));
+document.write(html);
 document.close();
 </script>
 </body></html>
